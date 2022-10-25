@@ -70,3 +70,10 @@ const text = "Zoinks, shaggy, thats a ghost";
 const word = "zoinks";
 omitOffensiveWords(word, text);
 Expected Output: ", shaggy, that's a ghost!";
+
+Test: "It should replace an offensive word contained in a passage with an empty string and retain all other capitalization."
+Code:
+const text = "Zoinks, Shaggy, thats a ghost";
+const word = "zoinks";
+omitOffensiveWords(word, text);
+Expected Output: ", Shaggy, thats a ghost";

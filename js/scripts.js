@@ -32,14 +32,27 @@ function includesRarestLetter(word) {
 
 function omitOffensiveWords(word, text) {
   // make passage lowercase to check
-  let lowercasePassage = text.toLowerCase();
-  return lowercasePassage.replaceAll(word,"");
+  // let lowercasePassage = text.toLowerCase();
+  // return lowercasePassage.replaceAll(word,"");
 
-  // const textArray = text.split(" ");
+  // store text passage as an array
+  const textArray = text.split(" ");
+  console.log(textArray)
 
-  // textArray.forEach(function(element) {
-  //   if (element.toLowerCase().contains(word)) {
-  //     element.replace(word,"")
-  //   }
-  // });
-}
+  // iterate through array
+  textArray.forEach(function(element) {
+    // check if element in array (word in passage) includes offensive word
+    // offensive words must be lowercase in order for this to work
+    if (element.toLowerCase().includes(word)) {
+      console.log(element)
+      console.log(word)
+      element = "";
+      console.log(element);
+    }
+  });
+  // make array back into string
+  const newText = textArray.join(" ");
+
+  // return modified passage
+  return newText;
+};
